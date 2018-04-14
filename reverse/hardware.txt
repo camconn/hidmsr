@@ -1,0 +1,63 @@
+Overall PCB Model: PCB170413A
+
+Silicon Labs has a tutorial to communicate with UART over HID devices, which I suspect is similar to what is happening here.
+
+Previous models of the MSRX0X(X) family (e.g. MSR605) are compatible with the PL-2303 USB-to-UART driver. Following this, it
+makes sense that the creators of this product have reused most of their device commands (and software).
+
+===================
+NAME: ANT2801 (5V USB Input Two-Cell Lithium Battery Efficient Charge Management IC)
+
+The marking on this chip are:
+"""
+ANT2801
+HA1736
+"""
+
+Notes:
+This chip is located near the battery on the PCB (U2).
+
+Here's a wireout diagram of it:
+https://screenshots.firefox.com/kZksGJNxN8o2CRmY/wenku.baidu.com
+===================
+NAME: Silicon Labs Universal Bee 2 32-bit Microcontroller
+
+The marking on this chip are:
+"""
+EFM8
+UB20F32G
+B00PQB
+1742 B
+"""
+
+Notes:
+Universal Bee 2 Family
+Family Feature Set 0
+It looks like a QFP package is used here.
+===================
+NAME: MX612E Motor Driver Integrated Circuit
+
+The marking on this chip are:
+"""
+MX612E
+1727H
+"""
+
+Notes:
+It's a motor driver. Wew.
+===================
+NAME: TL062C Low Power JFET Amplifier
+
+The marking on this chip are:
+""
+062C
+(ST) <<I could not read this part>>
+""
+
+Notes:
+Connected to motor/generator (BPI).
+
+======================
+Software Notes from AN945 from Silicon Labs:
+
+BOOL CHIDtoUARTDlg::TransmitData(const BYTE* buffer, DWORD bufferSize)
