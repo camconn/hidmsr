@@ -1,4 +1,4 @@
-''' Interface for the the MSR605X magnetic card reader.
+""" Interface for the the MSR605X magnetic card reader.
 
 This file defines an interface as well as utility functions to read and
 interact with the MSR605X HID-based reader.
@@ -6,7 +6,7 @@ interact with the MSR605X HID-based reader.
 Licensed under the GNU Public License, version 3 or later.
 
 Copyright (c) 2018 Cameron Conn
-'''
+"""
 
 
 import ctypes
@@ -71,11 +71,11 @@ class MSRDevice():
         def _data_handler(data):
             if len(data) > 1:  # Strip off the first char if we have data longer than 1 byte
                 data = data[1:]
-            hex_str = ['{:02X}'.format(c) for c in data]
-            raw_str = ''.join(['{:c}'.format(c) for c in data])
-            out = ' '.join(hex_str)
-            print('Hex data: ({} bytes)'.format(len(data)), end=' ')
-            print('({})'.format(raw_str))
+            hex_str = ["{:02X}".format(c) for c in data]
+            raw_str = "".join(["{:c}".format(c) for c in data])
+            out = " ".join(hex_str)
+            print("Hex data: ({} bytes)".format(len(data)), end=" ")
+            print("({})".format(raw_str))
             print(out)
 
         device.set_raw_data_handler(_data_handler)
@@ -124,7 +124,7 @@ class MSRDevice():
     def set_bpi(self, bpi1=None, bpi2=None, bpi3=None):
         """ Set the BPI for card reader. """
         # WTF?!?! How do I set this up?
-        pass
+        self._send_command([])
 
     def unknown1(self):
         self._send_command([])
