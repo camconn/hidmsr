@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 ''' Convert raw magnetic stripe (magstripe) data to text.
 
 This library converts bits of magnetic stripe tracks to human-readable
@@ -89,3 +88,4 @@ if __name__ == '__main__':
         elif i == 1:  # Track 2
             result = decode_aba(decoded_binary)
         print(result)
+
