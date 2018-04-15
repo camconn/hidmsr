@@ -147,7 +147,7 @@ class MSRDevice():
         """ Reset the device's state. """
         self._send_command_nowait([0xC2, 0x1B, 0x61, 0x44, 0xF8, 0x19])
 
-    def raw_read(self):
+    def read_raw(self):
         """ Read a card's raw data without any preprocessing. """
         return self._send_command_wait([0xC5, 0x1B, 0x6D])
 

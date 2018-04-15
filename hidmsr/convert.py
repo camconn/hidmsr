@@ -25,7 +25,18 @@ def hex_to_bin(str_hex: str):
     return total
 
 def decode_sixdec(bin_str: str):
-    """ Decode a binary string encoded in SIXDEC. """
+    """ Decode a binary string encoded in SIXDEC.
+
+    Parameters
+    ==========
+        bin_str: a hexadecimal string of the raw binary data to be decoded.
+            spaces in this parameter will be ignored.
+
+    Returns
+    =======
+        a string of the decoded data with the LRC omitted.
+    """
+
     chars = len(bin_str) // 7
     output = ""
     for i in range(0, chars*7, 7):
@@ -48,7 +59,18 @@ def decode_sixdec(bin_str: str):
     return output[:-1]  # Strip last character to avoid garbage
 
 def decode_aba(bin_str: str):
-    """ Decode a binary string encoded in ABA. """
+    """ Decode a binary string encoded in ABA.
+
+    Parameters
+    ==========
+        bin_str: a hexadecimal string of the raw binary data to be decoded.
+            spaces in this parameter will be ignored.
+
+    Returns
+    =======
+        a string of the decoded data with the LRC omitted.
+    """
+
     chars = len(bin_str) // 5
     output = ""
     for i in range(0, chars*5, 5):
